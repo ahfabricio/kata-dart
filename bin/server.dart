@@ -37,7 +37,7 @@ Future<shelf.Response> _echoRequest(shelf.Request request) async {
     case 'products':
       return _selectProducts(request);
     default:
-      return shelf.Response.ok('Invalid url');
+      return shelf.Response.ok('Invalid URI');
   }
 }
 
