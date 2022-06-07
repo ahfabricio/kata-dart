@@ -1,4 +1,4 @@
-import 'package:server/db/repositories/db_client.dart';
+import 'package:server/db/db_client.dart';
 import 'package:supabase/supabase.dart';
 
 class ProductRepository{
