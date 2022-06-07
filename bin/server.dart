@@ -2,7 +2,7 @@ import 'package:shelf/shelf_io.dart' as io;
 
 // Local imports
 import 'api_handler.dart';
-import '../server_config.dart';
+import '../lib/server_config.dart';
 
 
 void main(List<String> args) async {

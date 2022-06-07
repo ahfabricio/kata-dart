@@ -8,7 +8,7 @@ class ApiHandler {
   Handler get handler {
     final router = Router();
 
-    // Theres lies all the routes 
+    // There lies all the routes
     router.get('${apiPrefix}products', SelectProductsUsecase().execute);
     // router.get(API_PREFIX + 'products', selectProductsUsecase);
     // router.get(API_PREFIX + 'products', selectProductsUsecase);
