@@ -10,7 +10,7 @@ class ApiHandler {
 
     // There lies all the routes
     router.get('${apiPrefix}products', SelectProductsUsecase().execute);
-    //router.get('${apiPrefix}products/<id>', FindProductById().execute);
+    router.get('${apiPrefix}products/<id>', FindProductById().execute);
     // router.get(API_PREFIX + 'products', selectProductsUsecase);
 
     // router.post(API_PREFIX+ 'products', insertProductsUsecase);

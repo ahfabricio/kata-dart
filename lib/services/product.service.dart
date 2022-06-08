@@ -14,5 +14,13 @@ class ProductService {
     return res;
   }
 
-  findProductById(String id) {}
+  Future<Map<dynamic, dynamic>> findProductById(String id) async {
+    PostgrestResponse queryResult =
+        await _repository.getProductById(int.parse(id));
+    var res = {};
+    if (queryResult.data != null) {
+      res = {'product': queryResult.data};
+    }
+    return res;
+  }
 }
