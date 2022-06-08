@@ -1,4 +1,5 @@
-import 'package:server/db/models/product.dart';
+import 'dart:convert';
+
 import 'package:server/services/product.service.dart';
 import 'package:shelf/shelf.dart';
 
@@ -6,9 +7,7 @@ class SelectProductsUsecase {
   final _service = ProductService();
 
   Future<Response> execute(Request req) async {
-
-    List<Product> res = await _service.selectProducts();
-    print(res);
-    return  Response.ok(res);
+    Map<dynamic, dynamic> res = await _service.selectProducts();
+    return Response.ok(jsonEncode(res));
   }
 }
