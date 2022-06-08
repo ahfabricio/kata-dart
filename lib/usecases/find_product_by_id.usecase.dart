@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:server/services/product.service.dart';
 import 'package:shelf/shelf.dart';
 
-class FindProductById {
+class FindProductByIdUsecase {
   final _service = ProductService();
 
   Future<Response> execute(Request request, String id) async {
