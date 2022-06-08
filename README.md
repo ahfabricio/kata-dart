@@ -9,6 +9,8 @@ I use Supabase as a db and mainly shelf for HTTP requests in Dart
 
 ## TO RUN
 
+> Dart SDK to install : [SDK](https://dart.dev/get-dart)
+
 To run the project : `dart run`
 
 *the `pubspec.yaml` has a name attribute and it will automatically find the .dart file in `/bin` to launch it*
