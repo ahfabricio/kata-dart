@@ -11,23 +11,7 @@ class ApiHandler {
     // There lies all the routes
     router.get('${apiPrefix}products', SelectProductsUsecase().execute);
     router.get('${apiPrefix}products/<id>', FindProductById().execute);
-    // router.get(API_PREFIX + 'products', selectProductsUsecase);
-
-    // router.post(API_PREFIX+ 'products', insertProductsUsecase);
-    // router.post(API_PREFIX+ 'products', insertProductsUsecase);
-    // router.post(API_PREFIX+ 'products', insertProductsUsecase);
-
-    // router.delete(API_PREFIX + 'products' deleteProducts);
 
     return router;
   }
 }
-
-
-/*Future<shelf.Response> _selectProducts(shelf.Request request) async {
-
-  final response = await supabaseClient.from('product').select().execute();
-  var map = {'products': response.data};
-
-  return shelf.Response.ok(jsonEncode(map));
-}*/
