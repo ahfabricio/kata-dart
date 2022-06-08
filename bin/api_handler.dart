@@ -1,7 +1,7 @@
+import 'package:server/usecases/find_product_by_id.usecase.dart';
 import 'package:server/usecases/select_products.usecase.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
-
 
 class ApiHandler {
   final apiPrefix = '/api/';
@@ -10,7 +10,7 @@ class ApiHandler {
 
     // There lies all the routes
     router.get('${apiPrefix}products', SelectProductsUsecase().execute);
-    // router.get(API_PREFIX + 'products', selectProductsUsecase);
+    //router.get('${apiPrefix}products/<id>', FindProductById().execute);
     // router.get(API_PREFIX + 'products', selectProductsUsecase);
 
     // router.post(API_PREFIX+ 'products', insertProductsUsecase);
@@ -18,7 +18,6 @@ class ApiHandler {
     // router.post(API_PREFIX+ 'products', insertProductsUsecase);
 
     // router.delete(API_PREFIX + 'products' deleteProducts);
-
 
     return router;
   }

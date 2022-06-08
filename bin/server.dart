@@ -15,3 +15,8 @@ Future<HttpServer> initServer() async {
   return await io.serve(
       ApiHandler().handler, ServerConfig.hostname, ServerConfig.port);
 }
+
+Future<HttpServer> initTestServer() async {
+  return await io.serve(
+      ApiHandler().handler, ServerConfig.hostname, ServerConfig.testPort);
+}
