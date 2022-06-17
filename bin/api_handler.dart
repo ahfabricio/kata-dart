@@ -16,4 +16,3 @@ class ApiHandler {
     return router;
   }
 }
-x
