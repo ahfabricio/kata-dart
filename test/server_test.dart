@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:server/db/models/product.dart';
 import 'package:test/test.dart';
 
 import '../bin/server.dart';
@@ -37,6 +38,21 @@ void main() async {
   test('Get a specific product by its id', () async {
     final Uri url = Uri.parse('$baseUrl/products/1');
     final HttpClientRequest request = await client.getUrl(url);
+    final HttpClientResponse response = await request.close();
+
+    expect(response.statusCode, HttpStatus.ok);
+    expect(await response.isEmpty, false);
+  });
+
+  test('Create a product', () async {
+    final Uri url = Uri.parse('$baseUrl/products');
+    final HttpClientRequest request = await client.postUrl(url);
+    request.headers
+        .set(HttpHeaders.contentTypeHeader, "application/json; charset=UTF-8");
+    Map<dynamic, dynamic> product =
+        Product(name: "testProduct", price: 42, weight: 24).toJson();
+    request.write('$product');
+
     final HttpClientResponse response = await request.close();
 
     expect(response.statusCode, HttpStatus.ok);
